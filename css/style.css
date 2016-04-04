@@ -1,0 +1,36 @@
+/* This is the CSS code that gives my html files life */
+
+body {
+  background-color: black;
+  font-family: Verdana
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px
+}
+
+.lesson {
+  background-color: silver;
+  color: black;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.concept-title {
+  background-color: black;
+  color: silver;
+  font-size: 25px;
+  text-align: left;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.concept-description {
+  font-size: 15px;
+  background-color: silver;
+  color: black;
+  border-radius: 25px;
+  padding: 15px
+}

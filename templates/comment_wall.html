@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+
+  <title>Comment Section</title>
+
+
+  <form action="/sign?wall_name={{ wall_name }}" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div style ="color: red">{{error}}</div>
+      <div><input class ="btn btn-success" type="submit" value="comment"></div>
+    </form>
+  <br>
+ <p>Logged in as: </p>
+  <a href=""></a>
+  <!-- user comments start here -->
+  {% for post in posts %}
+    {% if post.author %}
+      <b>{{ post.author.email }}
+        {% if user and user.user_id() == post.author.identity %}
+          (You)
+        {% endif %}
+      </b> wrote:
+    {% else %}
+     An anonymous person wrote:
+    {% endif %}
+    <blockquote>{{ post.content }}</blockquote>
+  {% endfor %}
+
+
+
+   <form>Wall :
+      <input value="{{wall_name}}" name= "wall_name">
+      <input  class="btn btn-danger" type="submit" value="switch">
+    </form>
+
+    <a href="{{ url|safe }}">{{ url_linktext }}</a>
+  <br>
+{% endblock %}
